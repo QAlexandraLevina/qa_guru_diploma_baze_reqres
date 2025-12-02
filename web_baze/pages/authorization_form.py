@@ -6,7 +6,7 @@ class AuthorizationForm:
     def __init__(self):
         self.personal_account_tab = browser.all(".header__menu-item")
         self.button_authorization = browser.all(".ui-button--overflow-hidden")
-        self.field_mail = browser.element("input[name='email']")
+        self.field_mail = browser.element(".text-field__input[name='email']")
         self.field_password = browser.element("input[name='password']")
         self.check_box_remember_me = browser.element(".ui-checkbox__box")
         self.authorized_profile = browser.element(".header__menu-item--profile")

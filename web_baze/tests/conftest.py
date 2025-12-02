@@ -1,4 +1,5 @@
 import os
+import warnings
 import pytest
 from dotenv import load_dotenv
 from selene.support.shared import browser
@@ -119,3 +120,9 @@ def open_promocode_page(authenticated_user):
     browser.open("/activate-promocode")
 
     yield
+
+"""Игнорирование Warning(ов)"""
+@pytest.fixture(scope='session', autouse=True)
+def suppress_warnings():
+    warnings.filterwarnings("ignore", message="Embedding username and password")
+    warnings.filterwarnings("ignore", category=PendingDeprecationWarning)
