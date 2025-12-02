@@ -7,7 +7,7 @@ from selene import browser, be
 from appium import webdriver
 current_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, current_dir)
-from config import context_manager
+from mobile_baze.config import context_manager
 from attachments import add_screenshot, add_xml, add_video
 from appium.webdriver.common.appiumby import AppiumBy
 
