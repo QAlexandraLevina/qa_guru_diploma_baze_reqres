@@ -20,5 +20,5 @@ class PromocodePage:
 
     @allure.step("Проверка отображения уведомления о невалидном промокоде")
     def should_display_error_message(self):
-        self.error_message.should(have.text("promocode not found")).should(be.visible)
+        self.error_message.should(have.text("Неизвестная ошибка")).should(be.visible)
         return self

@@ -117,7 +117,7 @@ def open_refill_page(authenticated_user):
 
 @pytest.fixture(scope='function')
 def open_promocode_page(authenticated_user):
-    browser.open("/activate-promocode")
+    browser.open("/activate-promo")
 
     yield
 
