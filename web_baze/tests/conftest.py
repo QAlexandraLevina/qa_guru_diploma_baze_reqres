@@ -96,6 +96,16 @@ def user_authorized():
     )
 
 
+"""Закрытие модального окна 'Колесо фортуны'"""
+@pytest.fixture(scope='function')
+def close_fortune_wheel():
+    try:
+        browser.element(".about-lucky-circle__close").click()
+    except:
+        pass
+    yield
+
+
 @pytest.fixture(scope='function')
 def authenticated_user(setup_browser, user_authorized):
     browser.open("/")

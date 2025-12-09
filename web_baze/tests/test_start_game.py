@@ -8,7 +8,7 @@ start_game = StartGame()
 
 @pytest.mark.web
 @allure.title("Проверка блока 'Как начать играть' при нажатии на кнопку 'Начать игру'")
-def test_start_game(setup_browser):
+def test_start_game(setup_browser, close_fortune_wheel):
     browser = setup_browser
 
     browser.open("/")
