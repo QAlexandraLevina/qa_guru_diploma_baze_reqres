@@ -1,5 +1,5 @@
 import allure
-from selene import browser, have, be, query
+from selene import browser, have, be
 from web_baze.data.users import UserData
 
 
@@ -14,7 +14,7 @@ class Header:
         self.tabs_header_authorized = browser.all(".header__menu-item")
         self.mail_name_tab = browser.element(".header__menu-item--profile")
         self.notification_tab_open = browser.element("button.header__menu-link")
-        self.notification_tab_close = browser.element("[data-v-8302bf9f][data-v-cd953009]")
+        self.notification_tab_close = browser.element("[data-v-b1c9d48e][data-v-d0da1ffa]")
         self.setting_tab = browser.element("a.header__menu-link")
         self.log_out_tab = browser.element(".ui-box--hoverable[style*='color-white-15']")
 

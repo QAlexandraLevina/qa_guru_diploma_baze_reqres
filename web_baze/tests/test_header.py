@@ -23,7 +23,7 @@ def test_header_unauthorized_user(setup_browser):
 @pytest.mark.web
 @allure.title("Проверка авторизованного пользователя")
 @allure.feature('Test Case #2: Проверка хедера у авторизованного пользователя')
-def test_header_authorized_user(authenticated_user):
+def test_header_authorized_user(authenticated_user, close_fortune_wheel):
 
     auth_form.should_authorized_profile()
 
