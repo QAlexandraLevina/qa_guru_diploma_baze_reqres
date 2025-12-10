@@ -76,7 +76,7 @@ class StartGame:
     def should_display_subtitle_and_description_pay_game_tab(self):
         self.subtitle_tabs.should(be.visible)
         self.description_tabs.should(be.visible)
-        self.subtitle_tabs.should(have.text("Создайте аккаунт на сайте BAZE RP"))
+        self.subtitle_tabs.should(have.text("Купите и установите лицензионную GTA 5"))
         self.description_tabs.should(have.text("Лицензионную GTA 5 можно купить в Steam, Epic Games или на других площадках цифровой дистрибуции"))
         self.steam_link.should(be.visible).should(have.text("STEAM")).should(be.clickable)
         self.epic_games_link.should(be.visible).should(have.text("EPIC GAMES")).should(be.clickable)

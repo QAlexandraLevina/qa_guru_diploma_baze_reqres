@@ -7,7 +7,7 @@ footer = Footer()
 
 @pytest.mark.web
 @allure.title("Скролл до блока футера и проверка футера")
-def test_footer(setup_browser):
+def test_footer(setup_browser, close_fortune_wheel):
     browser = setup_browser
 
     browser.open("/")
