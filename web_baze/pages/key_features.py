@@ -17,27 +17,27 @@ class KeyFeatures:
         return self
 
 
-    def click_specializations_tab(self):
+    def click_personage_tab(self):
         self.click_feature_tabs("ПЕРСОНАЖ")
         return self
 
 
-    def click_pvp_events_with_matchmaking_tab(self):
+    def click_interactions_with_other_players_tab(self):
         self.click_feature_tabs("ВЗАИМОДЕЙСТВИЯ С ДРУГИМИ ИГРОКАМИ")
         return self
 
 
-    def click_leveling_up_character_tab(self):
+    def click_3d_and_graphics_tab(self):
         self.click_feature_tabs("3D И ГРАФИКА")
         return self
 
 
-    def click_exploring_the_world_tab(self):
+    def click_interfaces_and_server_mechanics_tab(self):
         self.click_feature_tabs("ИНТЕРФЕЙСЫ И СЕРВЕРНЫЕ МЕХАНИКИ")
         return self
 
 
-    def click_ent_and_plot_tab(self):
+    def click_lore_and_plot_tab(self):
         self.click_feature_tabs("ЛОР И СЮЖЕТ")
         return self
 
