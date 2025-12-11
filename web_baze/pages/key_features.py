@@ -18,22 +18,27 @@ class KeyFeatures:
 
 
     def click_specializations_tab(self):
-        self.click_feature_tabs("СПЕЦИАЛИЗАЦИИ")
+        self.click_feature_tabs("ПЕРСОНАЖ")
         return self
 
 
     def click_pvp_events_with_matchmaking_tab(self):
-        self.click_feature_tabs("PVP ИВЕНТЫ С МАТЧМЕЙКИНГОМ")
+        self.click_feature_tabs("ВЗАИМОДЕЙСТВИЯ С ДРУГИМИ ИГРОКАМИ")
         return self
 
 
     def click_leveling_up_character_tab(self):
-        self.click_feature_tabs("ПРОКАЧКА ПЕРСОНАЖА")
+        self.click_feature_tabs("3D И ГРАФИКА")
         return self
 
 
     def click_exploring_the_world_tab(self):
-        self.click_feature_tabs("ИССЛЕДОВАНИЕ МИРА")
+        self.click_feature_tabs("ИНТЕРФЕЙСЫ И СЕРВЕРНЫЕ МЕХАНИКИ")
+        return self
+
+
+    def click_ent_and_plot_tab(self):
+        self.click_feature_tabs("ЛОР И СЮЖЕТ")
         return self
 
 
@@ -45,15 +50,15 @@ class KeyFeatures:
 
     """Проверка отображения прогресс-баров под вкладками раздела 'Ключевые особенности'"""
     def should_display_key_feature_progress_bar(self):
-        self.key_features_progress_bar.should(have.size(4))
-        for i in range(4):
+        self.key_features_progress_bar.should(have.size(5))
+        for i in range(5):
             self.key_features_progress_bar[i].should(be.visible)
         return self
 
 
     """Проверка отображения и кликабельности вкладок в разделе 'Ключевые особенности'"""
     def should_display_key_feature_tabs(self):
-        tabs_names = ["СПЕЦИАЛИЗАЦИИ", "PVP ИВЕНТЫ С МАТЧМЕЙКИНГОМ", "ПРОКАЧКА ПЕРСОНАЖА", "ИССЛЕДОВАНИЕ МИРА"]
+        tabs_names = ["ПЕРСОНАЖ", "ВЗАИМОДЕЙСТВИЯ С ДРУГИМИ ИГРОКАМИ", "3D И ГРАФИКА", "ИНТЕРФЕЙСЫ И СЕРВЕРНЫЕ МЕХАНИКИ", "ЛОР И СЮЖЕТ"]
         for tab_name in tabs_names:
             self.key_feature_tabs.element_by(have.text(tab_name)).should(be.visible).should(be.clickable)
         return self

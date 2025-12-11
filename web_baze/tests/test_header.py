@@ -10,7 +10,7 @@ auth_form = AuthorizationForm()
 @pytest.mark.web
 @allure.title("Проверка элементов хедера и переход по каждой вкладке")
 @allure.feature('Test Case #1: Проверка хедера у неавторизованного пользователя')
-def test_header_unauthorized_user(setup_browser):
+def test_header_unauthorized_user(setup_browser, close_fortune_wheel):
     browser = setup_browser
 
     browser.open("/")
@@ -34,7 +34,7 @@ def test_header_authorized_user(authenticated_user, close_fortune_wheel):
 
 @pytest.mark.web
 @allure.title("Проверка выхода из аккаунта")
-def test_log_out(authenticated_user):
+def test_log_out(authenticated_user, close_fortune_wheel):
 
     header.click_log_out_tab()
 
