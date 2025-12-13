@@ -1,5 +1,7 @@
+import time
 import allure
 import pytest
+from selene import be
 from web_baze.pages.footer import Footer
 
 
@@ -7,10 +9,19 @@ footer = Footer()
 
 @pytest.mark.web
 @allure.title("Скролл до блока футера и проверка футера")
-def test_footer(setup_browser, close_fortune_wheel):
+def test_footer(setup_browser):
     browser = setup_browser
 
     browser.open("/")
+
+    """Закрытие модального окна 'Колесо фортуны'"""
+    try:
+        time.sleep(2)
+        browser.element(".about-lucky-circle__lucky-circle").should(be.visible)
+        browser.element(".about-lucky-circle__close").click()
+    except:
+        pass
+
 
     with allure.step("Скролл до футера"):
         browser.execute_script("arguments[0].scrollIntoView();", footer.bottom_footer_info.locate())

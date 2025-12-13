@@ -1,6 +1,7 @@
 import allure
 import pytest
-
+import time
+from selene import be
 from web_baze.pages.start_game import StartGame
 
 
@@ -8,10 +9,19 @@ start_game = StartGame()
 
 @pytest.mark.web
 @allure.title("Проверка блока 'Как начать играть' при нажатии на кнопку 'Начать игру'")
-def test_start_game(setup_browser, close_fortune_wheel):
+def test_start_game(setup_browser):
     browser = setup_browser
 
     browser.open("/")
+
+    """Закрытие модального окна 'Колесо фортуны'"""
+    try:
+        time.sleep(2)
+        browser.element(".about-lucky-circle__lucky-circle").should(be.visible)
+        browser.element(".about-lucky-circle__close").click()
+    except:
+        pass
+
 
     with allure.step("Нажатие на кнопку 'Начать игру'"):
         start_game.click_button_play_game()
