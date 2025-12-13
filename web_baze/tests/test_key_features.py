@@ -7,7 +7,7 @@ key_features = KeyFeatures()
 
 @pytest.mark.web
 @allure.title("Скролл до блока 'Ключевые особенности' и проверка блока")
-def test_key_features(setup_browser, close_fortune_wheel):
+def test_key_features(setup_browser):
     browser = setup_browser
 
     browser.open("/")

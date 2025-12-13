@@ -2,6 +2,7 @@ import os
 import warnings
 import pytest
 from dotenv import load_dotenv
+from selene import be
 from selene.support.shared import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -94,16 +95,6 @@ def user_authorized():
         os.getenv('TEST_USER_EMAIL_BAZE_AUTHORIZATION'),
         os.getenv('TEST_USER_PASSWORD_BAZE_AUTHORIZATION')
     )
-
-
-"""Закрытие модального окна 'Колесо фортуны'"""
-@pytest.fixture(scope='function')
-def close_fortune_wheel():
-    try:
-        browser.element(".about-lucky-circle__close").click()
-    except:
-        pass
-    yield
 
 
 @pytest.fixture(scope='function')
