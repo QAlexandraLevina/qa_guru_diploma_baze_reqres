@@ -11,7 +11,7 @@
 ## 🛠️ Технологии и инструменты
 
 ---
-<img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg' width="70" height="70"/> <img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg' width="70" height="70"/> <img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytest/pytest-original-wordmark.svg' width="70" height="70"/> <img src='https://img.icons8.com/stickers/100/selenium-test-automation.png' width="70" height="70"/> <img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg' width="70" height="70"/> <img src='https://avatars.githubusercontent.com/u/5879127?s=200&v=4' width="70" height="70"/> <img src='icons_and_img/Allure_Report.svg' width="70" height="70"/> <img src='icons_and_img/Selenoid.svg' width="70" height="70"/> <img src='https://img.icons8.com/color/144/telegram-app--v1.png' width="70" height="70"/> <img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original-wordmark.svg' width="70" height="70"/> <code><img width="7%" title="Allure TestOps" src="icons_and_img/allure_testops.png"></code>
+<img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg' width="70" height="70"/> <img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg' width="70" height="70"/> <img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytest/pytest-original-wordmark.svg' width="70" height="70"/> <img src='https://img.icons8.com/stickers/100/selenium-test-automation.png' width="70" height="70"/> <img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg' width="70" height="70"/> <img src='https://avatars.githubusercontent.com/u/5879127?s=200&v=4' width="70" height="70"/> <img src='icons_and_img/Allure_Report.svg' width="70" height="70"/> <img src='icons_and_img/Selenoid.svg' width="70" height="70"/> <code><img width="7%" title="Allure TestOps" src="icons_and_img/allure_testops.png"></code> <img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original-wordmark.svg' width="70" height="70"/> <img src='https://img.icons8.com/color/144/telegram-app--v1.png' width="70" height="70"/>
 
 ---
 ## 🔍 Область тестирования
@@ -176,17 +176,17 @@ macOS/Linux:
 ### 📊 Визуализация отчётов с результатами (Allure Report, Allure TestOps, Jira, Telegram)
 
 ---
-#### **Allure Report**
+#### <img src='https://avatars.githubusercontent.com/u/5879127?s=200&v=4' width="30" height="30"/> **Allure Report**
 <img src='icons_and_img/Passed WEB Tests Allure Report.png' width="900" height="800"/>
 <img src='icons_and_img/Passed Mobile Tests Allure Report.png' width="900" height="800"/>
 <img src='icons_and_img/Passed API Tests Allure Report.png' width="900" height="800"/>
 
-#### **Allure TestOps**
+#### <code><img width="3%" title="Allure TestOps" src="icons_and_img/allure_testops.png"></code> **Allure TestOps**
 <img src='icons_and_img/Dashboard TestOps.png' width="900" height="800"/>
 
-#### **Jira**
+#### <img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original-wordmark.svg' width="30" height="30"/> **Jira**
 <img src='icons_and_img/Issue Jira.png' width="900" height="800"/>
 
-#### **Telegram Notifications**
+#### <img src='https://img.icons8.com/color/144/telegram-app--v1.png' width="30" height="30"/> **Telegram Notifications**
 <img src='icons_and_img/telegram_notification WEB.png' width="350" height="300"/>
 <img src='icons_and_img/telegram_notification API.png' width="350" height="300"/>
