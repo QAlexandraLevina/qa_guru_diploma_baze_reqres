@@ -173,7 +173,7 @@ macOS/Linux:
 <img src='icons_and_img/report_icon.png' width="900" height="800"/>
 
 ---
-### 📊 Визуализация отчётов с результатами (Allure Report, Telegram)
+### 📊 Визуализация отчётов с результатами (Allure Report, Allure TestOps, Jira, Telegram)
 
 ---
 #### **Allure Report**
