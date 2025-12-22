@@ -1,5 +1,4 @@
-# qa_guru_diploma
-<img src='icons_and_img/baze_rp.png' width="30" height="30"/> Дипломный WEB / Mobile проект тестирования РП проекта BAZE + API Reqres.in с использованием Python, Pytest, Selene, Allure, Jenkins, Selenoid, Allure TestOps, Jira.
+# <img src='icons_and_img/baze_rp.png' width="30" height="30"/> Дипломный WEB / Mobile проект тестирования РП проекта BAZE + API Reqres.in с использованием Python, Pytest, Selene, Allure, Jenkins, Selenoid, Allure TestOps, Jira.
 
 ---
 ## 📋 О проекте
