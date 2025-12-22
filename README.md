@@ -159,7 +159,7 @@ macOS/Linux:
 ---
 **1.** Авторизоваться в '[Jenkins](https://jenkins.autotests.cloud/)'.
 
-**2.** Перейти в Джобу: `test_jenkins_qa_guru_diploma_baze_reqres`.
+**2.** Перейти в Джобу: [`test_jenkins_qa_guru_diploma_baze_reqres`](https://jenkins.autotests.cloud/job/test_jenkins_qa_guru_diploma_baze_reqres/).
 <img src='icons_and_img/search_job.png' width="900" height="800"/>
 
 **3.** Нажать 'Build with Parameters' на панели слева для запуска тестов.
