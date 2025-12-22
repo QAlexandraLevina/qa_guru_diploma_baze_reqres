@@ -181,10 +181,10 @@ macOS/Linux:
 <img src='icons_and_img/Passed Mobile Tests Allure Report.png' width="900" height="800"/>
 <img src='icons_and_img/Passed API Tests Allure Report.png' width="900" height="800"/>
 
-#### <code><img width="3%" title="Allure TestOps" src="icons_and_img/allure_testops.png"></code> **Allure TestOps**
+#### <code><img width="3%" title="Allure TestOps" src="icons_and_img/allure_testops.png"></code> **[Allure TestOps](https://allure.autotests.cloud/project/5034/dashboards)**
 <img src='icons_and_img/Dashboard TestOps.png' width="900" height="800"/>
 
-#### <img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original-wordmark.svg' width="30" height="30"/> **Jira**
+#### <img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original-wordmark.svg' width="30" height="30"/> **[Jira](https://jira.autotests.cloud/browse/HOMEWORK-1562?filter=allissues)**
 <img src='icons_and_img/Issue Jira.png' width="900" height="800"/>
 
 #### <img src='https://img.icons8.com/color/144/telegram-app--v1.png' width="30" height="30"/> **Telegram Notifications**
