@@ -1,7 +1,7 @@
 import pytest
-from api_reqres.utils.constants import URL
+from api_reqres.utils.config import BASE_URL
 
 
 @pytest.fixture
 def base_url():
-    return URL
+    return BASE_URL

@@ -1,6 +1,6 @@
 import pytest
 import allure
-from api_reqres.utils.api_client import api_client
+from api_reqres.clients.api_client import api_client
 from api_reqres.utils.schemas import post_user_create_schema, get_single_user_schema, put_update_user_schema, post_unsuccessful_login_schema
 from jsonschema import validate
 
