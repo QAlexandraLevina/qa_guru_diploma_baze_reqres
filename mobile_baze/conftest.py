@@ -2,6 +2,7 @@ import os
 import sys
 import allure
 import pytest
+import time
 from dotenv import load_dotenv
 from selene import browser, be
 from appium import webdriver
@@ -41,7 +42,6 @@ def mobile_management(context):
 
     session_id = browser.driver.session_id
 
-    import time
     time.sleep(3)
 
     try:
