@@ -4,6 +4,7 @@ import pytest
 from dotenv import load_dotenv
 from selene import browser, be
 from appium import webdriver
+from selene.core.exceptions import TimeoutException
 from mobile_baze.config import context_manager
 from mobile_baze.attachments import add_screenshot, add_xml, add_video
 from appium.webdriver.common.appiumby import AppiumBy
@@ -38,12 +39,10 @@ def mobile_management(context):
 
     session_id = browser.driver.session_id
 
-    browser.element((AppiumBy.ID, "com.bazemobile.main:id/button3")).should(be.visible, timeout=15)
-
     try:
         browser.element((AppiumBy.ID, "com.android.permissioncontroller:id/permission_allow_foreground_only_button")).should(be.visible).click()
         browser.element((AppiumBy.ID, "com.android.permissioncontroller:id/permission_allow_button")).should(be.visible).click()
-    except:
+    except TimeoutException:
         pass
 
     yield

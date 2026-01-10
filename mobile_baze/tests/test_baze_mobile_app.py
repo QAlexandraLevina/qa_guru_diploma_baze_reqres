@@ -24,7 +24,7 @@ def test_starting_menu(mobile_management):
                 cancel_button.click()
 
         with allure.step("Тап на кнопку технической поддержки"):
-            browser.element((AppiumBy.ID, "com.bazemobile.main:id/imageButton13")).should(be.visible).click()
+            browser.element((AppiumBy.ID, "com.bazemobile.main:id/imageButton13")).should(be.visible).should(be.clickable).click()
 
         with allure.step("Тап по первому вопросу в разделе 'Помощь'"):
             browser.element((AppiumBy.XPATH, "//android.widget.TextView[@resource-id='com.bazemobile.main:id/faq_item_caption' and @text='Как придумать никнейм?']")).click()
