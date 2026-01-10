@@ -1,26 +1,77 @@
 post_user_create_schema = {
  "type": "object",
-  "additionalProperties": False,
- "properties": {
- "name": {
- "type": "string"
- },
- "job": {
- "type": "string"
- },
- "id": {
- "type": "string"
- },
- "createdAt": {
- "type": "string"
- }
- },
- "required": [
- "name",
- "job",
- "id",
- "createdAt"
- ]
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "job": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "_meta": {
+      "type": "object",
+      "properties": {
+        "powered_by": {
+          "type": "string"
+        },
+        "docs_url": {
+          "type": "string"
+        },
+        "upgrade_url": {
+          "type": "string"
+        },
+        "example_url": {
+          "type": "string"
+        },
+        "variant": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "cta": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "label",
+            "url"
+          ]
+        },
+        "context": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "powered_by",
+        "docs_url",
+        "upgrade_url",
+        "example_url",
+        "variant",
+        "message",
+        "cta",
+        "context"
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "job",
+    "id",
+    "createdAt",
+    "_meta"
+  ]
 }
 
 
@@ -50,19 +101,25 @@ get_single_user_schema = {
             "type": "object",
             "properties": {
                 "powered_by": {"type": "string"},
-                "upgrade_url": {"type": "string"},
                 "docs_url": {"type": "string"},
-                "template_gallery": {"type": "string"},
+                "upgrade_url": {"type": "string"},
+                "example_url": {"type": "string"},
+                "variant": {"type": "string"},
                 "message": {"type": "string"},
-                "features": {
-                    "type": "array",
-                    "items": {"type": "string"}
+                "cta": {
+                    "type": "object",
+                    "properties": {
+                        "label": {"type": "string"},
+                        "url": {"type": "string"}
+                    },
+                    "required": ["label", "url"]
                 },
-                "upgrade_cta": {"type": "string"}
+                "context": {"type": "string"}
             },
             "required": [
-                "powered_by", "upgrade_url", "docs_url", "template_gallery",
-                "message", "features", "upgrade_cta"
+                "powered_by", "docs_url", "upgrade_url",
+                "example_url", "variant", "message",
+                "cta", "context"
             ]
         }
     },

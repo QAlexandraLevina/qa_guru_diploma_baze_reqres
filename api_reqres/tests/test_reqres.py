@@ -40,11 +40,11 @@ def test_get_user(base_url):
             "avatar": "https://reqres.in/img/faces/2-image.jpg"
         }
 
-        assert response.json()["id"] == data["id"]
-        assert response.json()["email"] == data["email"]
-        assert response.json()["first_name"] == data["first_name"]
-        assert response.json()["last_name"] == data["last_name"]
-        assert response.json()["avatar"] == data["avatar"]
+        assert response.json()["data"]["id"] == data["id"]
+        assert response.json()["data"]["email"] == data["email"]
+        assert response.json()["data"]["first_name"] == data["first_name"]
+        assert response.json()["data"]["last_name"] == data["last_name"]
+        assert response.json()["data"]["avatar"] == data["avatar"]
 
     with allure.step("Валидация схемы ответа"):
         validate(response.json(), get_single_user_schema)

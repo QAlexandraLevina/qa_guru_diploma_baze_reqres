@@ -1,15 +1,11 @@
 import os
-import sys
 import allure
 import pytest
-import time
 from dotenv import load_dotenv
 from selene import browser, be
 from appium import webdriver
-current_dir = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, current_dir)
 from mobile_baze.config import context_manager
-from attachments import add_screenshot, add_xml, add_video
+from mobile_baze.attachments import add_screenshot, add_xml, add_video
 from appium.webdriver.common.appiumby import AppiumBy
 
 
@@ -42,12 +38,11 @@ def mobile_management(context):
 
     session_id = browser.driver.session_id
 
-    time.sleep(3)
+    browser.element((AppiumBy.ID, "com.bazemobile.main:id/button3")).should(be.visible, timeout=15)
 
     try:
         browser.element((AppiumBy.ID, "com.android.permissioncontroller:id/permission_allow_foreground_only_button")).should(be.visible).click()
         browser.element((AppiumBy.ID, "com.android.permissioncontroller:id/permission_allow_button")).should(be.visible).click()
-        time.sleep(1)
     except:
         pass
 

@@ -18,11 +18,10 @@ def test_starting_menu(mobile_management):
         with allure.step("Тап на кнопку 'Подтвердить' на странице авторизации"):
             browser.element((AppiumBy.ID, "com.bazemobile.main:id/button15")).should(be.visible).click()
 
-        try:
+        cancel_button = browser.element((AppiumBy.ID, "com.bazemobile.main:id/button2"))
+        if cancel_button.should(be.visible):
             with allure.step("Тап на кнопку 'Нет' для отказа от фоновой загрузки"):
-                browser.element((AppiumBy.ID, "com.bazemobile.main:id/button2")).should(be.visible).click()
-        except:
-            pass
+                cancel_button.click()
 
         with allure.step("Тап на кнопку технической поддержки"):
             browser.element((AppiumBy.ID, "com.bazemobile.main:id/imageButton13")).should(be.visible).click()
