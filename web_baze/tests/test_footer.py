@@ -2,6 +2,7 @@ import time
 import allure
 import pytest
 from selene import be
+from selene.core.exceptions import TimeoutException
 from web_baze.pages.footer import Footer
 
 
@@ -19,7 +20,7 @@ def test_footer(setup_browser):
         time.sleep(2)
         browser.element(".about-lucky-circle__lucky-circle").should(be.visible)
         browser.element(".about-lucky-circle__close").click()
-    except:
+    except TimeoutException:
         pass
 
 

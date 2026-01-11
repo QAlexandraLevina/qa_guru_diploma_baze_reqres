@@ -2,6 +2,7 @@ import time
 import allure
 import pytest
 from selene import be
+from selene.core.exceptions import TimeoutException
 from web_baze.pages.authorization_form import AuthorizationForm
 
 
@@ -19,7 +20,7 @@ def test_authorization_form(setup_browser, user_authorized):
         time.sleep(2)
         browser.element(".about-lucky-circle__lucky-circle").should(be.visible)
         browser.element(".about-lucky-circle__close").click()
-    except:
+    except TimeoutException:
         pass
 
     with allure.step("Авторизация пользователя"):

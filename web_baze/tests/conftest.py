@@ -4,6 +4,7 @@ import warnings
 import pytest
 from dotenv import load_dotenv
 from selene import be
+from selene.core.exceptions import TimeoutException
 from selene.support.shared import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -107,7 +108,7 @@ def authenticated_user(setup_browser, user_authorized):
         time.sleep(2)
         browser.element(".about-lucky-circle__lucky-circle").should(be.visible)
         browser.element(".about-lucky-circle__close").click()
-    except:
+    except TimeoutException:
         pass
 
     authenticated_form = AuthorizationForm()
@@ -127,7 +128,7 @@ def open_refill_page(authenticated_user):
         time.sleep(2)
         browser.element(".about-lucky-circle__lucky-circle").should(be.visible)
         browser.element(".about-lucky-circle__close").click()
-    except:
+    except TimeoutException:
         pass
 
     yield
@@ -142,7 +143,7 @@ def open_promocode_page(authenticated_user):
         time.sleep(2)
         browser.element(".about-lucky-circle__lucky-circle").should(be.visible)
         browser.element(".about-lucky-circle__close").click()
-    except:
+    except TimeoutException:
         pass
 
     yield
