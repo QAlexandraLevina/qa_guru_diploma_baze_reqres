@@ -2,6 +2,20 @@ from selene import browser, be, have
 
 
 class Footer:
+    VKONTAKTE_TEXT_LINK = "VKONTAKTE"
+    TELEGRAM_TEXT_LINK = "TELEGRAM"
+    DISCORD_TEXT_LINK = "DISCORD"
+    YOUTUBE_TEXT_LINK = "YOUTUBE"
+    USER_AGREEMENT_TEXT_LINK = "ПОЛЬЗОВАТЕЛЬСКОЕ СОГЛАШЕНИЕ"
+    PRIVACY_POLICY_TEXT_LINK = "ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ"
+    PROJECT_RULES_TEXT_LINK = "ПРАВИЛА ПРОЕКТА"
+    DISCLAIMER_TEXT = ("BAZE RP НЕ СВЯЗАНА, НЕ СПОНСИРУЕТСЯ И НЕ ПОДДЕРЖИВАЕТСЯ КОМПАНИЕЙ TAKE-TWO INTERACTIVE SOFTWARE, INC. (ROCKSTAR GAMES). "
+                   "ВСЕ ИСПОЛЬЗУЕМЫЕ ТОРГОВЫЕ МАРКИ И ДРУГИЕ ПРЕДМЕТЫ ИНТЕЛЛЕКТУАЛЬНОЙ СОБСТВЕННОСТИ ЯВЛЯЮТСЯ СОБСТВЕННОСТЬЮ СООТВЕТСТВУЮЩИХ ВЛАДЕЛЬЦЕВ.")
+    COPYRIGHT_LOGO_TEXT = "BAZE © 2025"
+    ORGANIZATION_NAME_TEXT = 'ООО "EDUCATION STUDIO"'
+    INN_TEXT = "ИНН 311 619 091"
+    ORGANIZATION_ADDRESS_TEXT = "BARHAYOT MFY, 12 MAVZESI , 20А-UY"
+
     def __init__(self):
         self.top_footer_logo = browser.element(".footer-top__logo")
         self.top_footer_small_logo = browser.element(".footer-top__small-logo")
@@ -51,25 +65,23 @@ class Footer:
 
     """Проверка отображения названий ссылок"""
     def should_display_correct_names_links(self):
-        self.vkontakte_link.should(have.text("VKONTAKTE"))
-        self.telegram_link.should(have.text("TELEGRAM"))
-        self.discord_link.should(have.text("DISCORD"))
-        self.youtube_link.should(have.text("YOUTUBE"))
-        self.user_agreement_link.should(have.text("ПОЛЬЗОВАТЕЛЬСКОЕ СОГЛАШЕНИЕ"))
-        self.privacy_policy_link.should(have.text("ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ"))
-        self.project_rules_link.should(have.text("ПРАВИЛА ПРОЕКТА"))
+        self.vkontakte_link.should(have.text(self.VKONTAKTE_TEXT_LINK))
+        self.telegram_link.should(have.text(self.TELEGRAM_TEXT_LINK))
+        self.discord_link.should(have.text(self.DISCORD_TEXT_LINK))
+        self.youtube_link.should(have.text(self.YOUTUBE_TEXT_LINK))
+        self.user_agreement_link.should(have.text(self.USER_AGREEMENT_TEXT_LINK))
+        self.privacy_policy_link.should(have.text(self.PRIVACY_POLICY_TEXT_LINK))
+        self.project_rules_link.should(have.text(self.PROJECT_RULES_TEXT_LINK))
         return self
 
 
     """Проверка отображения текстовой части футера"""
     def should_display_texts_footer(self):
         self.top_footer_logo.should(be.visible)
-        self.top_footer_small_logo.should(be.visible).should(have.text("BAZE © 2025"))
-        ex_text = ("BAZE RP НЕ СВЯЗАНА, НЕ СПОНСИРУЕТСЯ И НЕ ПОДДЕРЖИВАЕТСЯ КОМПАНИЕЙ TAKE-TWO INTERACTIVE SOFTWARE, INC. (ROCKSTAR GAMES). "
-                   "ВСЕ ИСПОЛЬЗУЕМЫЕ ТОРГОВЫЕ МАРКИ И ДРУГИЕ ПРЕДМЕТЫ ИНТЕЛЛЕКТУАЛЬНОЙ СОБСТВЕННОСТИ ЯВЛЯЮТСЯ СОБСТВЕННОСТЬЮ СООТВЕТСТВУЮЩИХ ВЛАДЕЛЬЦЕВ.")
-        self.disclaimer.should(be.visible).should(have.exact_text(ex_text))
-        self.bottom_footer_info.should(be.visible).should(have.text('ООО "EDUCATION STUDIO'))
-        self.bottom_footer_info.should(be.visible).should(have.text('ИНН 311 619 091'))
-        self.bottom_footer_info.should(be.visible).should(have.text('BARHAYOT MFY, 12 MAVZESI , 20А-UY'))
+        self.top_footer_small_logo.should(be.visible).should(have.text(self.COPYRIGHT_LOGO_TEXT))
+        self.disclaimer.should(be.visible).should(have.exact_text(self.DISCLAIMER_TEXT))
+        self.bottom_footer_info.should(be.visible).should(have.text(self.ORGANIZATION_NAME_TEXT))
+        self.bottom_footer_info.should(be.visible).should(have.text(self.INN_TEXT))
+        self.bottom_footer_info.should(be.visible).should(have.text(self.ORGANIZATION_ADDRESS_TEXT))
         self.bottom_footer_payments.should(be.visible)
         return self
