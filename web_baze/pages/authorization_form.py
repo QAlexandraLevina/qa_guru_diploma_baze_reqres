@@ -3,6 +3,12 @@ from selene import browser, have
 
 
 class AuthorizationForm:
+    REGISTRATION_TAB_TEXT = "Регистрация"
+    AUTHORIZATION_TAB_TEXT = "Вход в аккаунт"
+    BUTTON_LOG_IN_TEXT = "войти в аккаунт"
+    USER_POINTS_TEXT = "ОЧКИ ПЕРСОНАЖА"
+
+
     def __init__(self):
         self.burger_menu = browser.element(".icon.header__burger")
         self.registration_tab = browser.element("li.sidebar-menu__item")
@@ -18,11 +24,11 @@ class AuthorizationForm:
 
 
     def click_registration_tab(self):
-        self.registration_tab.should(have.text("Регистрация")).click()
+        self.registration_tab.should(have.text(self.REGISTRATION_TAB_TEXT)).click()
 
 
     def click_authorization_tab(self):
-        self.button_authorization.element_by(have.text("Вход в аккаунт")).click()
+        self.button_authorization.element_by(have.text(self.AUTHORIZATION_TAB_TEXT)).click()
         return self
 
 
@@ -42,13 +48,13 @@ class AuthorizationForm:
 
 
     def click_button_log_in(self):
-        self.button_authorization.element_by(have.text("войти в аккаунт")).click()
+        self.button_authorization.element_by(have.text(self.BUTTON_LOG_IN_TEXT)).click()
         return self
 
 
     """Проверка авторизации после заполнения полей"""
     def should_authorized_profile(self):
-        self.text_user_points.should(have.text("ОЧКИ ПЕРСОНАЖА"))
+        self.text_user_points.should(have.text(self.USER_POINTS_TEXT))
         browser.should(have.url_containing("/account"))  # Проверка, что после авторизации происходит редирект на /account
         return self
 

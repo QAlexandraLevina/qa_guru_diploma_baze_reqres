@@ -3,6 +3,12 @@ from selene import browser, have, be
 
 
 class RefillPage:
+    SBP_METHOD_TEXT = "СБП"
+    SBERPAY_METHOD_TEXT = "Sberpay"
+    USDT_METHOD_TEXT = "USDT TRC20"
+    CHECK_BOX_TEXT_1 = "Я ознакомлен и согласен с условиями "
+    CHECK_BOX_TEXT_2 = "Я понимаю и согласен, что после получения Игровой валюты"
+
     def __init__(self):
         self.button_payment_method = browser.element(".top-up__method-select")
         self.drop_down_list_currency = browser.element(".ui-select")
@@ -36,20 +42,20 @@ class RefillPage:
 
     @allure.step("Выбор 'СБП' для способа оплаты")
     def click_sbp_method(self):
-        return self.click_payment_methods("СБП")
+        return self.click_payment_methods(self.SBP_METHOD_TEXT)
 
     @allure.step("Выбор 'Sberpay' для способа оплаты")
     def click_sberpay_method(self):
-        return self.click_payment_methods("Sberpay")
+        return self.click_payment_methods(self.SBERPAY_METHOD_TEXT)
 
     @allure.step("Выбор 'USDT TRC20' для способа оплаты")
     def click_usdt_method(self):
-        return self.click_payment_methods("USDT TRC20")
+        return self.click_payment_methods(self.USDT_METHOD_TEXT)
 
     @allure.step("Проставление галочек в чек-боксах")
     def click_check_boxes(self):
-        self.check_boxes.element_by(have.text("Я ознакомлен и согласен с условиями ")).click()
-        self.check_boxes.element_by(have.text("Я понимаю и согласен, что после получения Игровой валюты")).click()
+        self.check_boxes.element_by(have.text(self.CHECK_BOX_TEXT_1)).click()
+        self.check_boxes.element_by(have.text(self.CHECK_BOX_TEXT_2)).click()
         return self
 
     @allure.step("Заполнение поля суммы пополнения")
