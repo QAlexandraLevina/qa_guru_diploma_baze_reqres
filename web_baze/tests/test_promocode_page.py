@@ -3,11 +3,12 @@ import pytest
 from web_baze.pages.promocode_page import PromocodePage
 
 
-promocode_page = PromocodePage()
 
 @pytest.mark.web
 @allure.title("Ввод невалидного промокода")
 def test_invalid_promocode_input(open_promocode_page):
+    promocode_page = PromocodePage()
+
     (promocode_page
      .fill_field_promocode("INVALID")
      .click_confirmation_button()

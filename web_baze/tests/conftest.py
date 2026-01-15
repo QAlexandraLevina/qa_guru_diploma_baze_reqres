@@ -104,12 +104,8 @@ def authenticated_user(setup_browser, user_authorized):
     browser.open("/")
 
     """Закрытие модального окна 'Колесо фортуны'"""
-    try:
-        time.sleep(2)
-        browser.element(".about-lucky-circle__lucky-circle").should(be.visible)
+    if browser.element(".about-lucky-circle__lucky-circle").should(be.visible):
         browser.element(".about-lucky-circle__close").click()
-    except TimeoutException:
-        pass
 
     authenticated_form = AuthorizationForm()
     authenticated_form.authorization_user(user_authorized)

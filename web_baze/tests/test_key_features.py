@@ -6,14 +6,14 @@ from web_baze.pages.key_features import KeyFeatures
 import allure
 
 
-key_features = KeyFeatures()
-
 @pytest.mark.web
 @allure.title("Скролл до блока 'Ключевые особенности' и проверка блока")
 def test_key_features(setup_browser):
     browser = setup_browser
 
     browser.open("/")
+
+    key_features = KeyFeatures()
 
     """Закрытие модального окна 'Колесо фортуны'"""
     try:

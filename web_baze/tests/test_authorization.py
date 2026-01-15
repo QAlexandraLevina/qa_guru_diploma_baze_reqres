@@ -6,14 +6,14 @@ from selene.core.exceptions import TimeoutException
 from web_baze.pages.authorization_form import AuthorizationForm
 
 
-authorization_form = AuthorizationForm()
-
 @pytest.mark.web
 @allure.title("Авторизация и проверка авторизации пользователя")
 def test_authorization_form(setup_browser, user_authorized):
     browser = setup_browser
 
     browser.open("/")
+
+    authorization_form = AuthorizationForm()
 
     """Закрытие модального окна 'Колесо фортуны'"""
     try:

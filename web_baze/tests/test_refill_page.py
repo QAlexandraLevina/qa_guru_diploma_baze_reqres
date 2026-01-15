@@ -3,7 +3,6 @@ import pytest
 from web_baze.pages.refill_page import RefillPage
 
 
-refill_page = RefillPage()
 
 @pytest.mark.web
 @allure.title("Пополнение без бонуса")
@@ -12,6 +11,7 @@ def test_refill_page_without_bonus(open_refill_page):
     Проверка полного flow пополнения счёта без бонуса.
     Внешние платёжные системы не тестируем из-за ограничений анти-бот систем.
     """
+    refill_page = RefillPage()
 
     (refill_page
      .select_list_currency('RUS')
@@ -33,6 +33,7 @@ def test_refill_page_without_bonus(open_refill_page):
 ])
 def test_bonus_auto_activation(open_refill_page, input_amount, expected_bonus, expected_conversion):
     """Проверка автоматической активации бонуса при вводе определённой суммы"""
+    refill_page = RefillPage()
 
     (refill_page
      .select_list_currency('RUS')
@@ -54,6 +55,7 @@ def test_bonus_auto_activation(open_refill_page, input_amount, expected_bonus, e
 ])
 def test_bonus_manual_select(open_refill_page, bonus_name, expected_amount, expected_conversion):
     """Проверка активации плитки и заполнения суммы пополнения при клике на бонус"""
+    refill_page = RefillPage()
 
     (refill_page
      .select_list_currency('RUS')

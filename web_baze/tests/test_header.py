@@ -7,8 +7,6 @@
 # from web_baze.pages.header import Header
 #
 #
-# header = Header()
-# auth_form = AuthorizationForm()
 #
 # @pytest.mark.web
 # @allure.title("Проверка элементов хедера и переход по каждой вкладке")
@@ -17,6 +15,9 @@
 #     browser = setup_browser
 #
 #     browser.open("/")
+#
+#     header = Header()
+#     auth_form = AuthorizationForm()
 #
 #     """Закрытие модального окна 'Колесо фортуны'"""
 #     try:
@@ -35,6 +36,8 @@
 # @allure.title("Проверка авторизованного пользователя")
 # @allure.feature('Test Case #2: Проверка хедера у авторизованного пользователя')
 # def test_header_authorized_user(authenticated_user):
+#     header = Header()
+#     auth_form = AuthorizationForm()
 #
 #     auth_form.should_authorized_profile()
 #
@@ -46,6 +49,8 @@
 # @pytest.mark.web
 # @allure.title("Проверка выхода из аккаунта")
 # def test_log_out(authenticated_user):
+#     header = Header()
+#     auth_form = AuthorizationForm()
 #
 #     header.click_log_out_tab()
 #

@@ -6,7 +6,6 @@ from selene.core.exceptions import TimeoutException
 from web_baze.pages.footer import Footer
 
 
-footer = Footer()
 
 @pytest.mark.web
 @allure.title("Скролл до блока футера и проверка футера")
@@ -14,6 +13,8 @@ def test_footer(setup_browser):
     browser = setup_browser
 
     browser.open("/")
+
+    footer = Footer()
 
     """Закрытие модального окна 'Колесо фортуны'"""
     try:

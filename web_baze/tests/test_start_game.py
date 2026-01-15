@@ -6,7 +6,6 @@ from selene.core.exceptions import TimeoutException
 from web_baze.pages.start_game import StartGame
 
 
-start_game = StartGame()
 
 @pytest.mark.web
 @allure.title("Проверка блока 'Как начать играть' при нажатии на кнопку 'Начать игру'")
@@ -14,6 +13,8 @@ def test_start_game(setup_browser):
     browser = setup_browser
 
     browser.open("/")
+
+    start_game = StartGame()
 
     """Закрытие модального окна 'Колесо фортуны'"""
     try:
