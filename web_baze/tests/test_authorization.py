@@ -1,9 +1,7 @@
-import time
 import allure
 import pytest
-from selene import be
-from selene.core.exceptions import TimeoutException
 from web_baze.pages.authorization_form import AuthorizationForm
+from web_baze.utils.modal_helper import close_fortune_modal
 
 
 @pytest.mark.web
@@ -13,15 +11,9 @@ def test_authorization_form(setup_browser, user_authorized):
 
     browser.open("/")
 
-    authorization_form = AuthorizationForm()
+    close_fortune_modal()
 
-    """Закрытие модального окна 'Колесо фортуны'"""
-    try:
-        time.sleep(2)
-        browser.element(".about-lucky-circle__lucky-circle").should(be.visible)
-        browser.element(".about-lucky-circle__close").click()
-    except TimeoutException:
-        pass
+    authorization_form = AuthorizationForm()
 
     with allure.step("Авторизация пользователя"):
         authorization_form.authorization_user(user_authorized)

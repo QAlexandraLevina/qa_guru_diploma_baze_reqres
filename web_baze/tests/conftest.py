@@ -13,6 +13,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 from web_baze.data.users import UserData
 from web_baze.pages.authorization_form import AuthorizationForm
 from web_baze.utils import attachments
+from web_baze.utils.modal_helper import close_fortune_modal
+
+
 
 DEFAULT_BROWSER_VERSION = "128.0"
 
@@ -103,9 +106,7 @@ def user_authorized():
 def authenticated_user(setup_browser, user_authorized):
     browser.open("/")
 
-    """Закрытие модального окна 'Колесо фортуны'"""
-    if browser.element(".about-lucky-circle__lucky-circle").should(be.visible):
-        browser.element(".about-lucky-circle__close").click()
+    close_fortune_modal()
 
     authenticated_form = AuthorizationForm()
     authenticated_form.authorization_user(user_authorized)
@@ -120,12 +121,7 @@ def open_refill_page(authenticated_user):
     browser.open("/top-up")
 
     """Закрытие модального окна 'Колесо фортуны'"""
-    try:
-        time.sleep(2)
-        browser.element(".about-lucky-circle__lucky-circle").should(be.visible)
-        browser.element(".about-lucky-circle__close").click()
-    except TimeoutException:
-        pass
+    close_fortune_modal()
 
     yield
 
@@ -135,12 +131,7 @@ def open_promocode_page(authenticated_user):
     browser.open("/activate-promo")
 
     """Закрытие модального окна 'Колесо фортуны'"""
-    try:
-        time.sleep(2)
-        browser.element(".about-lucky-circle__lucky-circle").should(be.visible)
-        browser.element(".about-lucky-circle__close").click()
-    except TimeoutException:
-        pass
+    close_fortune_modal()
 
     yield
 

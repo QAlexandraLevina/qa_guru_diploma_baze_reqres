@@ -1,10 +1,7 @@
 import allure
 import pytest
-import time
-from selene import be
-from selene.core.exceptions import TimeoutException
 from web_baze.pages.start_game import StartGame
-
+from web_baze.utils.modal_helper import close_fortune_modal
 
 
 @pytest.mark.web
@@ -14,16 +11,9 @@ def test_start_game(setup_browser):
 
     browser.open("/")
 
+    close_fortune_modal()
+
     start_game = StartGame()
-
-    """Закрытие модального окна 'Колесо фортуны'"""
-    try:
-        time.sleep(2)
-        browser.element(".about-lucky-circle__lucky-circle").should(be.visible)
-        browser.element(".about-lucky-circle__close").click()
-    except TimeoutException:
-        pass
-
 
     with allure.step("Нажатие на кнопку 'Начать игру'"):
         start_game.click_button_play_game()

@@ -5,6 +5,7 @@ from selene import browser, have, be
 class PromocodePage:
     CONFIRMATION_BUTTON_TEXT = "Подтвердить"
     DISPLAY_ERROR_MESSAGE_TEXT = "Неизвестная ошибка"
+    INVALID_PROMOCODE_TEXT = "INVALID"
 
     def __init__(self):
         self.field_promocode = browser.element(".text-field__input")
@@ -12,8 +13,8 @@ class PromocodePage:
         self.error_message = browser.element(".notification__message")
 
     @allure.step("Заполнение поля 'Введите код'")
-    def fill_field_promocode(self, promocode):
-        self.field_promocode.type(promocode)
+    def fill_field_promocode(self):
+        self.field_promocode.type(self.INVALID_PROMOCODE_TEXT)
         return self
 
     @allure.step("Нажатие на кнопку 'Подтвердить'")

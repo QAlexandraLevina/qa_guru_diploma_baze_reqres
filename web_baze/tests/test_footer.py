@@ -1,10 +1,7 @@
-import time
 import allure
 import pytest
-from selene import be
-from selene.core.exceptions import TimeoutException
 from web_baze.pages.footer import Footer
-
+from web_baze.utils.modal_helper import close_fortune_modal
 
 
 @pytest.mark.web
@@ -14,16 +11,9 @@ def test_footer(setup_browser):
 
     browser.open("/")
 
+    close_fortune_modal()
+
     footer = Footer()
-
-    """Закрытие модального окна 'Колесо фортуны'"""
-    try:
-        time.sleep(2)
-        browser.element(".about-lucky-circle__lucky-circle").should(be.visible)
-        browser.element(".about-lucky-circle__close").click()
-    except TimeoutException:
-        pass
-
 
     with allure.step("Скролл до футера"):
         browser.execute_script("arguments[0].scrollIntoView();", footer.bottom_footer_info.locate())

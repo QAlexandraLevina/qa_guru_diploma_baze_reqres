@@ -1,12 +1,11 @@
-# import time
 # import allure
 # import pytest
-# from selene import be
-# from selene.core.exceptions import TimeoutException
 # from web_baze.pages.authorization_form import AuthorizationForm
 # from web_baze.pages.header import Header
+# from web_baze.utils.modal_helper import close_fortune_modal
 #
 #
+### ДЛЯ РЕФАКТОРИНГА В БУДУЩЕМ ###
 #
 # @pytest.mark.web
 # @allure.title("Проверка элементов хедера и переход по каждой вкладке")
@@ -16,16 +15,9 @@
 #
 #     browser.open("/")
 #
-#     header = Header()
-#     auth_form = AuthorizationForm()
+#     close_fortune_modal()
 #
-#     """Закрытие модального окна 'Колесо фортуны'"""
-#     try:
-#         time.sleep(2)
-#         browser.element(".about-lucky-circle__lucky-circle").should(be.visible)
-#         browser.element(".about-lucky-circle__close").click()
-#     except TimeoutException:
-#         pass
+#     header = Header()
 #
 #     header.should_have_menu_items_unauthorized()
 #
@@ -50,7 +42,6 @@
 # @allure.title("Проверка выхода из аккаунта")
 # def test_log_out(authenticated_user):
 #     header = Header()
-#     auth_form = AuthorizationForm()
 #
 #     header.click_log_out_tab()
 #
